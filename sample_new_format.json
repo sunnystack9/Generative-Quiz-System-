@@ -1,0 +1,315 @@
+[
+  {
+    "question_id": "NEW-HIS-001",
+    "question_type": "statements",
+    "exam": "UPSC",
+    "paper": "1",
+    "year": 2026,
+    "theme": "Ancient History",
+    "subtopic": "Indus Valley Civilization",
+    "question": "Consider the following statements about the Indus Valley Civilization:",
+    "options": [],
+    "statements": [
+      {
+        "text": "Harappa was the first site of the civilization to be excavated, in 1921.",
+        "is_true": true,
+        "why": "Excavation at Harappa began in 1921 under Daya Ram Sahni."
+      },
+      {
+        "text": "Lothal is known for its dockyard.",
+        "is_true": true,
+        "why": "Lothal (Gujarat) has the remains of a dockyard."
+      },
+      {
+        "text": "Iron was widely used for tools and weapons.",
+        "is_true": false,
+        "why": "It was a Bronze Age culture; iron was not in common use."
+      },
+      {
+        "text": "Its script has been fully deciphered.",
+        "is_true": false,
+        "why": "The Indus script remains undeciphered."
+      }
+    ],
+    "explanation": "Harappa (1921) and Lothal's dockyard are correct. The civilization was Bronze Age, and its script is still undeciphered."
+  },
+  {
+    "question_id": "NEW-HIS-002",
+    "question_type": "statements",
+    "exam": "HCS",
+    "paper": "1",
+    "year": 2026,
+    "theme": "Ancient History",
+    "subtopic": "Mauryan Empire",
+    "question": "Consider the following statements about Ashoka's inscriptions:",
+    "options": [],
+    "statements": [
+      {
+        "text": "Rock Edict XIII describes the Kalinga War.",
+        "is_true": true,
+        "why": "It records Ashoka's remorse after the Kalinga War."
+      },
+      {
+        "text": "All Ashokan inscriptions are written in the Brahmi script.",
+        "is_true": false,
+        "why": "Some in the north-west use Kharosthi, and some use Greek and Aramaic."
+      },
+      {
+        "text": "James Prinsep deciphered the Brahmi script of the edicts in 1837.",
+        "is_true": true,
+        "why": "Prinsep's decipherment opened up Ashokan history."
+      },
+      {
+        "text": "Ashoka's Sarnath lion capital was adopted as India's national emblem.",
+        "is_true": true,
+        "why": "The state emblem is adapted from the Sarnath lion capital."
+      }
+    ],
+    "explanation": "Not all edicts use Brahmi: Kharosthi, Greek and Aramaic were also used in border regions."
+  },
+  {
+    "question_id": "NEW-HIS-003",
+    "question_type": "statements",
+    "exam": "UPSC",
+    "paper": "1",
+    "year": 2026,
+    "theme": "Medieval History",
+    "subtopic": "Delhi Sultanate",
+    "question": "Consider the following statements about the Delhi Sultanate:",
+    "options": [],
+    "statements": [
+      {
+        "text": "Alauddin Khalji introduced market control measures.",
+        "is_true": true,
+        "why": "He fixed prices of grain, cloth and other goods."
+      },
+      {
+        "text": "Iltutmish introduced the silver tanka and copper jital.",
+        "is_true": true,
+        "why": "These became the standard coins of the Sultanate."
+      },
+      {
+        "text": "Balban introduced the Dagh (branding of horses) system.",
+        "is_true": false,
+        "why": "The Dagh system was introduced by Alauddin Khalji."
+      },
+      {
+        "text": "Muhammad bin Tughlaq shifted his capital from Delhi to Daulatabad.",
+        "is_true": true,
+        "why": "The shift took place around 1327."
+      }
+    ],
+    "explanation": "Dagh (branding of horses) and the Chehra (descriptive roll of soldiers) were Alauddin Khalji's military reforms, not Balban's."
+  },
+  {
+    "question_id": "NEW-HIS-004",
+    "question_type": "statements",
+    "exam": "HCS",
+    "paper": "1",
+    "year": 2026,
+    "theme": "Modern History",
+    "subtopic": "Indian National Movement",
+    "question": "Consider the following statements about the Indian freedom struggle:",
+    "options": [],
+    "statements": [
+      {
+        "text": "The Indian National Congress was founded in 1885.",
+        "is_true": true,
+        "why": "Its first session was held in Bombay in 1885."
+      },
+      {
+        "text": "The Partition of Bengal was announced in 1905 by Lord Curzon.",
+        "is_true": true,
+        "why": "It came into effect on 16 October 1905."
+      },
+      {
+        "text": "The Cabinet Mission (1946) recommended the creation of a separate Pakistan.",
+        "is_true": false,
+        "why": "It rejected a fully sovereign Pakistan and proposed a three-tier union."
+      },
+      {
+        "text": "The Champaran Satyagraha (1917) was Gandhi's first satyagraha in India.",
+        "is_true": true,
+        "why": "It was against the forced indigo cultivation (tinkathia system)."
+      }
+    ],
+    "explanation": "The Cabinet Mission Plan proposed a federal union with groupings of provinces, not a separate Pakistan."
+  },
+  {
+    "question_id": "NEW-HIS-005",
+    "question_type": "match",
+    "exam": "UPSC",
+    "paper": "1",
+    "year": 2026,
+    "theme": "Ancient History",
+    "subtopic": "Foreign Accounts and Sources",
+    "question": "Match each person with the correct fact:",
+    "options": [],
+    "pairs": [
+      {
+        "term": "Fa-Hien",
+        "fact": "Visited India during Chandragupta II's reign and wrote Fo-Kuo-Ki"
+      },
+      {
+        "term": "Hiuen Tsang",
+        "fact": "Visited during Harsha's reign and wrote Si-Yu-Ki"
+      },
+      {
+        "term": "Megasthenes",
+        "fact": "Greek ambassador at Chandragupta Maurya's court who wrote Indica"
+      },
+      {
+        "term": "Kalhana",
+        "fact": "Wrote the Rajatarangini, a chronicle of Kashmir"
+      }
+    ],
+    "explanation": "Fa-Hien: Gupta period. Hiuen Tsang: Harsha's period. Megasthenes: Mauryan court. Kalhana: 12th-century Kashmir chronicler."
+  },
+  {
+    "question_id": "NEW-HIS-006",
+    "question_type": "match",
+    "exam": "HCS",
+    "paper": "1",
+    "year": 2026,
+    "theme": "Medieval History",
+    "subtopic": "Architecture",
+    "question": "Match each monument with the correct fact:",
+    "options": [],
+    "pairs": [
+      {
+        "term": "Alai Darwaza",
+        "fact": "Built by Alauddin Khalji"
+      },
+      {
+        "term": "Qutub Minar",
+        "fact": "Completed by Iltutmish after Aibak began it"
+      },
+      {
+        "term": "Buland Darwaza",
+        "fact": "Built by Akbar at Fatehpur Sikri"
+      },
+      {
+        "term": "Humayun's Tomb",
+        "fact": "Commissioned by Humayun's widow Haji Begum"
+      }
+    ],
+    "explanation": "Alai Darwaza: Alauddin Khalji. Qutub Minar: begun by Aibak, completed by Iltutmish. Buland Darwaza: Akbar. Humayun's Tomb: Haji Begum."
+  },
+  {
+    "question_id": "NEW-HIS-007",
+    "question_type": "match",
+    "exam": "UPSC",
+    "paper": "1",
+    "year": 2026,
+    "theme": "Modern History",
+    "subtopic": "Freedom Struggle Events",
+    "question": "Match each event with the correct fact:",
+    "options": [],
+    "pairs": [
+      {
+        "term": "Jallianwala Bagh massacre",
+        "fact": "April 1919, Amritsar"
+      },
+      {
+        "term": "Dandi March",
+        "fact": "March 1930, start of the Civil Disobedience Movement"
+      },
+      {
+        "term": "Poona Pact",
+        "fact": "September 1932, between Gandhi and Ambedkar"
+      },
+      {
+        "term": "Quit India Movement",
+        "fact": "August 1942, 'Do or Die' call"
+      }
+    ],
+    "explanation": "1919 Jallianwala Bagh; 1930 Dandi March; 1932 Poona Pact; 1942 Quit India."
+  },
+  {
+    "question_id": "NEW-HIS-008",
+    "exam": "UPSC",
+    "paper": "1",
+    "year": 2026,
+    "theme": "Ancient History",
+    "subtopic": "Gupta Empire",
+    "question": "Which Gupta ruler is often called the 'Napoleon of India'?",
+    "options": [
+      {
+        "label": "a",
+        "text": "Chandragupta I"
+      },
+      {
+        "label": "b",
+        "text": "Samudragupta"
+      },
+      {
+        "label": "c",
+        "text": "Chandragupta II"
+      },
+      {
+        "label": "d",
+        "text": "Skandagupta"
+      }
+    ],
+    "answer": "b",
+    "explanation": "Samudragupta, described this way by historian V. A. Smith for his conquests. His campaigns are recorded in the Allahabad Pillar inscription by Harishena."
+  },
+  {
+    "question_id": "NEW-HIS-009",
+    "exam": "HCS",
+    "paper": "1",
+    "year": 2026,
+    "theme": "Medieval History",
+    "subtopic": "Mughal Empire",
+    "question": "The First Battle of Panipat (1526) was fought between Babur and:",
+    "options": [
+      {
+        "label": "a",
+        "text": "Hemu"
+      },
+      {
+        "label": "b",
+        "text": "Ibrahim Lodi"
+      },
+      {
+        "label": "c",
+        "text": "Rana Sanga"
+      },
+      {
+        "label": "d",
+        "text": "Sher Shah Suri"
+      }
+    ],
+    "answer": "b",
+    "explanation": "Babur defeated Ibrahim Lodi at Panipat in 1526 and founded the Mughal Empire. Rana Sanga was defeated later at Khanwa (1527)."
+  },
+  {
+    "question_id": "NEW-HIS-010",
+    "exam": "UPSC",
+    "paper": "1",
+    "year": 2026,
+    "theme": "Modern History",
+    "subtopic": "Social Reform Movements",
+    "question": "The Brahmo Sabha, later known as the Brahmo Samaj, was founded in 1828 by:",
+    "options": [
+      {
+        "label": "a",
+        "text": "Raja Ram Mohan Roy"
+      },
+      {
+        "label": "b",
+        "text": "Dayanand Saraswati"
+      },
+      {
+        "label": "c",
+        "text": "Keshab Chandra Sen"
+      },
+      {
+        "label": "d",
+        "text": "Debendranath Tagore"
+      }
+    ],
+    "answer": "a",
+    "explanation": "Raja Ram Mohan Roy founded it. Dayanand Saraswati founded the Arya Samaj (1875). Debendranath Tagore later led the Brahmo Samaj."
+  }
+]
