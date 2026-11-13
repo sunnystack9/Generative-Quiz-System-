@@ -2099,6 +2099,10 @@ def _build_ai_explanation_prompt(q, mode):
     deliberately, so it doesn't balloon a 4-option question into several
     extra paragraphs and undercut the separate "keep it concise" bullet."""
     options_text = "\n".join(f"{o.get('label')}) {o.get('text', '')}" for o in q.get("options", []))
+    answer_text = str(q.get("answer"))
+    if is_new_type(q):
+        options_text = "\n".join(_new_type_plain_lines(q, False))
+        answer_text = "\n".join(_new_type_plain_lines(q, True)).split("Answer:", 1)[-1].strip()
     header = "Write a new explanation" if mode == "generate" else "Improve the existing explanation"
     current_line = "" if mode == "generate" else f"CURRENT EXPLANATION: {q.get('explanation', '')}\n"
     preserve_block = (
@@ -2114,7 +2118,7 @@ def _build_ai_explanation_prompt(q, mode):
         f"(Paper {q.get('paper')}, theme: {q.get('theme')}).\n\n"
         f"QUESTION: {q.get('question', '')}\n"
         f"OPTIONS:\n{options_text}\n"
-        f"CORRECT ANSWER: {q.get('answer')}\n"
+        f"CORRECT ANSWER: {answer_text}\n"
         f"{current_line}\n"
         f"{preserve_block}"
         "Format revised_explanation as follows:\n"
@@ -2679,11 +2683,21 @@ def render_ai_autofill_missing(questions, user, source_file_by_id):
                         progress.progress((i + 1) / len(batch))
                         break
                 else:
-                    apply_explanation_edit(
+                    save_result = apply_explanation_edit(
                         q["question_id"], result["revised_explanation"], user, source_file_by_id,
                         ai_model=result["model_version"], issues_found=result["issues_found"],
                     )
-                    filled += 1
+                    if "error" in save_result:
+                        failures.append((q["question_id"], "Could not save: " + save_result["error"]))
+                    else:
+                        filled += 1
+                        if save_result.get("changed") and not (
+                            save_result.get("github_ok") and save_result.get("github_log_ok")
+                        ):
+                            failures.append((
+                                q["question_id"],
+                                "Saved locally, but the GitHub sync failed — it won't survive a redeploy until it syncs.",
+                            ))
                 progress.progress((i + 1) / len(batch))
             status.empty()
             summary = f"Filled {filled} of {len(batch)} question(s)."
@@ -4588,7 +4602,9 @@ def render_full_question(q, key_prefix, note=None, include_answer_in_copy=False,
         st.caption(note)
 
     correct_letter = q.get("answer")
-    for o in q.get("options", []):
+    if is_new_type(q):
+        render_tap_result(q, None)
+    for o in ([] if is_new_type(q) else q.get("options", [])):
         if not o.get("text"):
             continue
         label = f"{o['label']}) {o['text']}"
@@ -4650,7 +4666,8 @@ def render_reviewed_question(q, user, show_caption=True):
     session_id = st.session_state.get("session_id")
     match = None
     for r in load_responses():
-        if r.get("session_id") == session_id and r.get("question_id") == q["question_id"]:
+        if (r.get("session_id") == session_id and r.get("question_id") == q["question_id"]
+                and r.get("user") == user):
             match = r  # a later entry would win if one ever somehow existed
     if show_caption:
         st.caption("📖 Reviewing a question you've already answered in this session — it can't be resubmitted here.")
@@ -4660,8 +4677,10 @@ def render_reviewed_question(q, user, show_caption=True):
     )
 
     selected_letter = match.get("selected") if match else None
-    correct_letter = q.get("answer")
-    for o in q.get("options", []):
+    correct_letter = question_answer_code(q)
+    if is_new_type(q):
+        render_tap_result(q, selected_letter)
+    for o in ([] if is_new_type(q) else q.get("options", [])):
         if not o.get("text"):
             continue
         label = f"{o['label']}) {o['text']}"
@@ -4708,6 +4727,375 @@ def render_reviewed_question(q, user, show_caption=True):
         st.rerun()
 
     render_community_notes(q["question_id"], user)
+
+
+# ---------- New question types: tap-statements and tap-to-pair (match) ----------
+# These questions have no a/b/c/d options (so no option can leak a clue).
+# Instead the learner taps statements they think are TRUE, or pairs each
+# term with its fact. Everything is stored in the same `selected` /
+# `correct_answer` fields every other part of the app already reads, as a
+# short text code, so scoring, spaced repetition and weakness tracking need
+# no changes:
+#   statements -> "TFTF" (T = tapped as correct), one letter per statement
+#   match      -> "0>2|1>0|2>1|3>3" (term number > fact number; x = unpaired)
+
+NEW_QUESTION_TYPES = (QUESTION_TYPE_STATEMENTS, QUESTION_TYPE_MATCH)
+
+# (emoji, background, border, text, hover background) -- one per pair.
+MATCH_PAIR_STYLES = [
+    ("🟦", "#eff6ff", "#60a5fa", "#1d4ed8", "#dbeafe"),
+    ("🟩", "#f0fdf4", "#4ade80", "#15803d", "#dcfce7"),
+    ("🟨", "#fefce8", "#facc15", "#a16207", "#fef9c3"),
+    ("🟪", "#faf5ff", "#c084fc", "#7e22ce", "#f3e8ff"),
+    ("🟥", "#fef2f2", "#f87171", "#b91c1c", "#fee2e2"),
+    ("🟧", "#fff7ed", "#fb923c", "#c2410c", "#ffedd5"),
+]
+
+
+def is_new_type(q):
+    return q.get("question_type") in NEW_QUESTION_TYPES
+
+
+def statements_pattern(flags):
+    return "".join("T" if f else "F" for f in flags)
+
+
+def match_pattern(mapping, n):
+    return "|".join(f"{i}>{mapping.get(i, 'x')}" for i in range(n))
+
+
+def parse_match_pattern(code, n):
+    """Turns "0>2|1>0" back into {0: 2, 1: 0}. Ignores anything malformed."""
+    mapping = {}
+    if not code or code == OPT_SKIPPED:
+        return mapping
+    for part in str(code).split("|"):
+        left, _, right = part.partition(">")
+        if left.isdigit() and right.isdigit() and int(left) < n and int(right) < n:
+            mapping[int(left)] = int(right)
+    return mapping
+
+
+def question_answer_code(q):
+    """The correct answer as the text code stored in responses. For old
+    questions this is just the answer letter, exactly as before."""
+    if q.get("question_type") == QUESTION_TYPE_STATEMENTS:
+        return statements_pattern([bool(s.get("is_true")) for s in q.get("statements", [])])
+    if q.get("question_type") == QUESTION_TYPE_MATCH:
+        n = len(q.get("pairs", []))
+        return match_pattern({i: i for i in range(n)}, n)
+    return q.get("answer")
+
+
+def _new_type_plain_lines(q, include_answer):
+    lines = []
+    if q.get("question_type") == QUESTION_TYPE_STATEMENTS:
+        statements = q.get("statements", [])
+        lines.extend(f"{i}. {s.get('text', '')}" for i, s in enumerate(statements, 1))
+        if include_answer:
+            lines.append("")
+            lines.append("Answer: " + "; ".join(
+                f"{i} {'True' if s.get('is_true') else 'False'}" for i, s in enumerate(statements, 1)
+            ))
+    elif q.get("question_type") == QUESTION_TYPE_MATCH:
+        pairs = q.get("pairs", [])
+        lines.append("Terms:")
+        lines.extend(f"{chr(65 + i)}. {p.get('term', '')}" for i, p in enumerate(pairs))
+        lines.append("Facts:")
+        lines.extend(f"{i + 1}. {p.get('fact', '')}" for i, p in enumerate(pairs))
+        if include_answer:
+            lines.append("")
+            lines.append("Answer: " + "; ".join(f"{chr(65 + i)}-{i + 1}" for i in range(len(pairs))))
+    return lines
+
+
+def inject_tap_card_css():
+    """Makes tap buttons look like left-aligned cards that wrap long text."""
+    st.markdown(
+        """
+        <style>
+        [class*="st-key-tapcard"] button {
+            text-align: left !important;
+            justify-content: flex-start !important;
+            height: auto !important;
+            min-height: 3rem;
+            white-space: normal !important;
+            padding: 0.7rem 0.9rem !important;
+        }
+        [class*="st-key-tapcard"] button p,
+        [class*="st-key-tapcard"] button div {
+            text-align: left !important;
+        }
+        </style>
+        """,
+        unsafe_allow_html=True,
+    )
+
+
+def render_tap_result(q, selected):
+    """Shows the checked answer for a statements/match question. `selected`
+    is the learner's saved code, OPT_SKIPPED, or None (just reading the
+    question, no attempt to compare against)."""
+    if q.get("question_type") == QUESTION_TYPE_STATEMENTS:
+        statements = q.get("statements", [])
+        marked = None
+        if selected and selected != OPT_SKIPPED and len(selected) == len(statements):
+            marked = [ch == "T" for ch in selected]
+        right_count = 0
+        for i, s in enumerate(statements):
+            is_true = bool(s.get("is_true"))
+            body = f"**{i + 1}. {s.get('text', '')}**\n\nCorrect answer: **{'True' if is_true else 'False'}**"
+            if marked is not None:
+                body += f" · You marked: {'True' if marked[i] else 'False'}"
+            if s.get("why"):
+                body += f"\n\n{s['why']}"
+            if marked is None:
+                st.success(body) if is_true else st.write(body)
+            elif marked[i] == is_true:
+                right_count += 1
+                st.success(body)
+            else:
+                st.error(body)
+        if marked is not None:
+            st.caption(f"{right_count} of {len(statements)} statements judged correctly.")
+    elif q.get("question_type") == QUESTION_TYPE_MATCH:
+        pairs = q.get("pairs", [])
+        mapping = None
+        if selected and selected != OPT_SKIPPED:
+            mapping = parse_match_pattern(selected, len(pairs))
+        right_count = 0
+        for i, p in enumerate(pairs):
+            body = f"{MATCH_PAIR_STYLES[i % len(MATCH_PAIR_STYLES)][0]} **{p.get('term', '')}** → {p.get('fact', '')}"
+            if mapping is None or mapping.get(i) == i:
+                right_count += 1
+                st.success(body)
+            else:
+                chosen = pairs[mapping[i]].get("fact", "") if i in mapping else "nothing"
+                st.error(body + f"\n\nYou paired it with: {chosen}")
+        if mapping is not None:
+            st.caption(f"{right_count} of {len(pairs)} pairs matched correctly.")
+
+
+def _render_statement_cards(q, idx):
+    """Tap cards for a statements question. Returns (code, any_tapped)."""
+    statements = q["statements"]
+    key = f"tap_flags_{q['question_id']}_{idx}"
+    if key not in st.session_state or len(st.session_state[key]) != len(statements):
+        st.session_state[key] = [False] * len(statements)
+    flags = st.session_state[key]
+
+    st.caption("Tap every statement you think is TRUE. Untapped statements count as false.")
+    inject_button_tint_css("tapcard_on_", "#eff6ff", "#3b82f6", "#1d4ed8", hover_bg="#dbeafe")
+    inject_button_tint_css("tapcard_off_", "#ffffff", "#d1d5db", "#111827", hover_bg="#f9fafb")
+    for i, s in enumerate(statements):
+        state = "on" if flags[i] else "off"
+        with st.container(key=f"tapcard_{state}_{idx}_{i}"):
+            mark = "✅" if flags[i] else "⬜"
+            if st.button(f"{mark}  {i + 1}. {s['text']}", key=f"tapbtn_{q['question_id']}_{idx}_{i}",
+                         use_container_width=True):
+                flags[i] = not flags[i]
+                st.session_state[key] = flags
+                st.rerun()
+    return statements_pattern(flags), any(flags)
+
+
+def _render_match_cards(q, idx):
+    """Tap-to-pair cards for a match question. Returns (code, all_paired)."""
+    pairs = q["pairs"]
+    n = len(pairs)
+    qid = q["question_id"]
+    map_key = f"match_map_{qid}_{idx}"
+    pend_key = f"match_pending_{qid}_{idx}"
+    if map_key not in st.session_state:
+        st.session_state[map_key] = {}
+    if pend_key not in st.session_state:
+        st.session_state[pend_key] = None
+    mapping = st.session_state[map_key]
+    pending = st.session_state[pend_key]
+
+    # Facts are shuffled (same shuffle on every rerun of this attempt) so
+    # their position can't hint at which term they belong to.
+    order = list(range(n))
+    random.Random(f"{st.session_state.get('session_id')}|{qid}").shuffle(order)
+    if n > 1 and order == list(range(n)):
+        order = order[1:] + order[:1]
+    fact_owner = {j: i for i, j in mapping.items()}
+
+    for ci, (_emoji, bg, border, text, hover) in enumerate(MATCH_PAIR_STYLES):
+        inject_button_tint_css(f"tapcard_m{ci}_", bg, border, text, hover_bg=hover)
+    inject_button_tint_css("tapcard_mnone_", "#ffffff", "#d1d5db", "#111827", hover_bg="#f9fafb")
+    inject_button_tint_css("tapcard_mpend_", "#f1f5f9", "#1e293b", "#0f172a", hover_bg="#e2e8f0")
+
+    st.caption("Tap a term, then tap its matching fact. Matched pairs share a colour. Tap a pair again to undo it.")
+    st.markdown("**Terms**")
+    for i in range(n):
+        if i in mapping:
+            state, mark = f"m{i % len(MATCH_PAIR_STYLES)}", MATCH_PAIR_STYLES[i % len(MATCH_PAIR_STYLES)][0]
+        elif pending == i:
+            state, mark = "mpend", "👉"
+        else:
+            state, mark = "mnone", "⬜"
+        with st.container(key=f"tapcard_{state}_t{idx}_{i}"):
+            if st.button(f"{mark}  {pairs[i]['term']}", key=f"mtt_{qid}_{idx}_{i}", use_container_width=True):
+                if i in mapping:
+                    del mapping[i]
+                    st.session_state[pend_key] = None
+                elif pending == i:
+                    st.session_state[pend_key] = None
+                else:
+                    st.session_state[pend_key] = i
+                st.rerun()
+
+    st.markdown("**Facts**")
+    for j in order:
+        if j in fact_owner:
+            ci = fact_owner[j] % len(MATCH_PAIR_STYLES)
+            state, mark = f"m{ci}", MATCH_PAIR_STYLES[ci][0]
+        else:
+            state, mark = "mnone", "⬜"
+        with st.container(key=f"tapcard_{state}_f{idx}_{j}"):
+            if st.button(f"{mark}  {pairs[j]['fact']}", key=f"mtf_{qid}_{idx}_{j}", use_container_width=True):
+                if j in fact_owner:
+                    del mapping[fact_owner[j]]
+                    st.rerun()
+                elif pending is not None:
+                    mapping[pending] = j
+                    st.session_state[pend_key] = None
+                    st.rerun()
+                else:
+                    st.toast("Tap a term first, then its fact.")
+    return match_pattern(mapping, n), len(mapping) == n
+
+
+def render_tap_question(q, idx, user, qs):
+    """The live-quiz screen for statements and match questions. Called from
+    render_question() right after the question text is shown."""
+    qid = q["question_id"]
+    inject_option_justify_css()
+    inject_tap_card_css()
+    is_match = q["question_type"] == QUESTION_TYPE_MATCH
+
+    if not st.session_state.get("revealed", False):
+        code, ready = _render_match_cards(q, idx) if is_match else _render_statement_cards(q, idx)
+
+        confidence = st.select_slider(
+            "Confidence",
+            options=[CONF_GUESSED, CONF_SOMEWHAT, CONF_CONFIDENT],
+            value=CONF_SOMEWHAT,
+            key=f"conf_{qid}_{idx}",
+        )
+
+        col_submit, col_skip, col_restart = st.columns(3)
+        inject_button_tint_css("submitbox", "#f0fdf4", "#86efac", "#15803d", hover_bg="#dcfce7")
+        inject_button_tint_css("skipbox", "#fffbeb", "#fcd34d", "#b45309", hover_bg="#fef3c7")
+        inject_button_tint_css("restartbox", "#fef2f2", "#fca5a5", "#b91c1c", hover_bg="#fee2e2")
+        with col_submit:
+            with st.container(key=f"submitbox_{idx}"):
+                submit = st.button("Submit", key=f"submit_{idx}", use_container_width=True)
+        with col_skip:
+            with st.container(key=f"skipbox_{idx}"):
+                skip = st.button("Skip", key=f"skip_{idx}", use_container_width=True)
+        with col_restart:
+            with st.container(key=f"restartbox_{idx}"):
+                if st.button("⚙️ Restart session", key=f"changefilters_{idx}", use_container_width=True):
+                    st.session_state.session_questions = []
+                    st.rerun()
+
+        if submit:
+            if is_match and not ready:
+                st.warning("Pair every term with a fact, or use Skip.")
+                return
+            confirm_key = f"confirm_none_{qid}_{idx}"
+            if not is_match and not ready and not st.session_state.get(confirm_key):
+                st.session_state[confirm_key] = True
+                st.warning("No statement is marked TRUE. Press Submit again to confirm that all are false, or use Skip.")
+                return
+
+        if submit or skip:
+            selected_code = OPT_SKIPPED if skip else code
+            correct_code = question_answer_code(q)
+            is_correct = selected_code == correct_code
+
+            save_response({
+                "user": user,
+                "session_id": st.session_state.session_id,
+                "question_id": qid,
+                "exam": q["exam"],
+                "paper": q["paper"],
+                "year": q["year"],
+                "theme": q["theme"],
+                "selected": selected_code,
+                "confidence": None if skip else confidence,
+                "correct_answer": correct_code,
+                "timestamp": datetime.now().isoformat(),
+            })
+            update_schedule_atomic(
+                user, qid, is_correct, skip, datetime.now(),
+                confidence=None if skip else confidence,
+            )
+            st.session_state.session_results.append({
+                "theme": q["theme"], "correct": is_correct, "skipped": skip,
+                "exam": q["exam"], "paper": q["paper"],
+            })
+            st.session_state.selected_letter = selected_code
+            st.session_state.revealed = True
+            save_active_session(
+                user, qs, st.session_state.current_idx,
+                st.session_state.session_results, st.session_state.session_id,
+                revealed=True, selected_letter=selected_code,
+            )
+            st.rerun()
+        return
+
+    # ---- Revealed state ----
+    selected = st.session_state.selected_letter
+    render_tap_result(q, selected)
+    if selected == OPT_SKIPPED:
+        st.info("Skipped — counted as 0, same as the real exam.")
+    elif selected == question_answer_code(q):
+        st.caption("Correct.")
+    else:
+        st.caption("Not quite.")
+
+    with st.expander("Explanation", expanded=True):
+        explanation = q.get("explanation")
+        if explanation:
+            render_explanation_text(explanation)
+        else:
+            st.caption("No explanation available for this question yet.")
+
+    my_bookmarks = load_bookmarks().get(user, {})
+    is_bookmarked = qid in my_bookmarks
+    inject_button_tint_css("nextbox", "#f0fdf4", "#86efac", "#15803d", hover_bg="#dcfce7")
+    inject_button_tint_css("bookmarkbox", "#fffbeb", "#fcd34d", "#b45309", hover_bg="#fef3c7")
+    col_next, col_bookmark = st.columns(2)
+    with col_next:
+        with st.container(key=f"nextbox_{idx}"):
+            if st.button("Next question →", key=f"next_{idx}", use_container_width=True):
+                st.session_state.current_idx += 1
+                st.session_state.revealed = False
+                st.session_state.selected_letter = None
+                st.session_state.nav_idx = st.session_state.current_idx
+                save_active_session(
+                    user, qs, st.session_state.current_idx,
+                    st.session_state.session_results, st.session_state.session_id,
+                    revealed=False, selected_letter=None,
+                )
+                st.rerun()
+    with col_bookmark:
+        with st.container(key=f"bookmarkbox_{idx}"):
+            if st.button(
+                "★ Bookmarked" if is_bookmarked else "⭐ Bookmark this Qn",
+                key=f"bookmark_{qid}_{idx}",
+                use_container_width=True,
+            ):
+                toggle_bookmark(user, qid)
+                st.rerun()
+
+    with st.expander("Copy this question"):
+        st.code(format_question_plaintext(q, include_answer=True), language=None, wrap_lines=True)
+
+    render_community_notes(qid, user)
 
 
 def render_question(practice_questions, user):
@@ -4967,6 +5355,10 @@ def render_question(practice_questions, user):
     st.progress((idx + 1) / len(qs))
     st.markdown(f"**Question {idx + 1} of {len(qs)}**  ·  _{q['theme']}_  ·  {q['exam']} {q['year']}")
     render_question_stem(q, container_key=f"stem_box_{q.get('question_id', 'current')}")
+
+    if is_new_type(q):
+        render_tap_question(q, idx, user, qs)
+        return
 
     # Justify the answer options, revealed-state feedback, and explanation text
     # the same way the question stem is justified above. This targets
@@ -5628,6 +6020,9 @@ def format_question_plaintext(q, include_answer=False):
     answer key still doesn't get a fabricated-looking "Answer:" line."""
     lines = [f"{q['question_id']} · {q['theme']} · {q['exam']} {q['year']}", "", q["question"]]
     opts = [o for o in q.get("options", []) if o.get("text")]
+    if is_new_type(q):
+        lines.append("")
+        lines.extend(_new_type_plain_lines(q, include_answer))
     if opts:
         lines.append("")
         lines.extend(f"{o['label']}) {o['text']}" for o in opts)
@@ -5703,6 +6098,9 @@ def format_question_for_ai_copy(q):
         "",
     ]
     opts = [o for o in q.get("options", []) if o.get("text")]
+    if is_new_type(q):
+        lines.extend(_new_type_plain_lines(q, True))
+        lines.append("")
     if opts:
         lines.extend(f"{o['label']}) {o['text']}" for o in opts)
         lines.append("")
@@ -6021,8 +6419,10 @@ def render_question_bank(questions, user, source_file_by_id):
             # Scoped by subject (theme) alone, across every exam, paper, and
             # year -- by request, this replaced the old exam+paper picker
             # rather than sitting alongside it.
-            pool = [q for q in questions if q.get("theme") == choice]
-            st.session_state.qb_pool = sorted(pool, key=lambda q: q["question_id"])
+            # Only the chosen subject is remembered. The question list is
+            # rebuilt from the live bank on every run (see below), so edits
+            # always show up and nothing stale is kept in session_state.
+            st.session_state.qb_subject = choice
             st.session_state.qb_nav_idx = 0
             st.session_state.qb_loaded = True
             # A fresh subject needs fresh filters -- otherwise a Year pick
@@ -6037,7 +6437,10 @@ def render_question_bank(questions, user, source_file_by_id):
         st.info("Pick a subject above, then tap Load / Reload to start browsing.")
         return
 
-    pool = st.session_state.qb_pool
+    pool = sorted(
+        (qq for qq in questions if qq.get("theme") == st.session_state.get("qb_subject")),
+        key=lambda qq: qq["question_id"],
+    )
 
     with st.expander("🔍 Filters", expanded=False):
         # key=str guards against a mixed-type 'year' column the same way
@@ -6270,7 +6673,8 @@ def render_question_bank(questions, user, source_file_by_id):
             mark_resolved(qid)
             st.rerun()
         render_typo_editor(q, user, context="qbank", source_file_by_id=source_file_by_id)
-        render_answer_key_editor(q, user, context="qbank", source_file_by_id=source_file_by_id)
+        if not is_new_type(q):
+            render_answer_key_editor(q, user, context="qbank", source_file_by_id=source_file_by_id)
         render_explanation_editor(q, user, source_file_by_id)
 
 
