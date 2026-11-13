@@ -1,0 +1,953 @@
+[
+  {
+    "question_id": "NEW-HIS-001",
+    "question_type": "statements",
+    "exam": "UPSC",
+    "paper": "1",
+    "year": 2026,
+    "theme": "Ancient History",
+    "subtopic": "Geographical & Epigraphic Foundations",
+    "question": "Consider the following statements regarding the linguistic and geographical evolution of ancient India:",
+    "options": [],
+    "statements": [
+      {
+        "text": "While Prakrit functioned as the pan-Indian epigraphic lingua franca in the 3rd century B.C., classical Sanskrit only achieved widespread administrative and epigraphic dominance across the subcontinent during the 4th and 5th centuries A.D.",
+        "is_true": true,
+        "why": "Ashokan inscriptions in the 3rd century B.C. used Prakrit; Sanskrit entered epigraphy in the 2nd century A.D. and became the pan-Indian standard under the Guptas (4th–5th centuries A.D.)."
+      },
+      {
+        "text": "Distinct regional scripts and regional languages emerged in Indian epigraphy immediately after the disintegration of the Mauryan Empire in the 2nd century B.C.",
+        "is_true": false,
+        "why": "Regional scripts and faint beginnings of regional languages emerged only from the 7th century A.D. onwards (and matured in the 9th–10th centuries A.D.) due to post-Gupta political fragmentation."
+      },
+      {
+        "text": "Ancient political ideals defined the domain of a chakravartin (universal monarch) as stretching from the Himalayas in the north to Cape Comorin in the south, and from the Brahmaputra valley in the east to beyond the Indus in the west.",
+        "is_true": true,
+        "why": "Ancient texts explicitly define a chakravartin's political and cultural sphere within these exact natural boundaries of Bharatavarsha."
+      },
+      {
+        "text": "The term 'Hind' was originally coined by Greek historians following Alexander's campaign, whereas 'India' was derived from Persian and Arabic usage.",
+        "is_true": false,
+        "why": "It is the exact opposite: 'India' was first used by the Greeks (from the Indus), while 'Hind' derives from Persian and Arabic languages."
+      }
+    ],
+    "explanation": "Prakrit served as the 3rd-century B.C. epigraphic lingua franca before Sanskrit rose to dominance in the Gupta era, and regional scripts emerged only from the 7th century A.D. onwards. The Greeks coined 'India', while Persians and Arabs used 'Hind'."
+  },
+  {
+    "question_id": "NEW-HIS-002",
+    "question_type": "statements",
+    "exam": "HCS",
+    "paper": "1",
+    "year": 2026,
+    "theme": "Ancient History",
+    "subtopic": "Foreign Accounts & Chronology",
+    "question": "Consider the following statements regarding Greco-Roman accounts and chronological anchors of ancient India:",
+    "options": [],
+    "statements": [
+      {
+        "text": "The Periplus of the Erythrean Sea (A.D. 80–115) was written in Latin by Pliny the Elder to document the drain of Roman gold into India for luxury goods.",
+        "is_true": false,
+        "why": "The Periplus was written in Greek by an anonymous author. It was Pliny's Naturalis Historia (A.D. 77), written in Latin, that lamented the Roman gold drain."
+      },
+      {
+        "text": "Ptolemy's Geography (c. A.D. 150) was composed in Greek and provides valuable data on ancient Indian geography and Indo-Roman maritime commerce.",
+        "is_true": true,
+        "why": "Both the Periplus and Ptolemy's Geography were written in Greek and describe Indo-Roman trade and ports."
+      },
+      {
+        "text": "The identification of Sandrokottas in Greek accounts with Chandragupta Maurya, whose accession is placed at 322 B.C., serves as the sheet-anchor of ancient Indian chronology.",
+        "is_true": true,
+        "why": "Synchronizing Greek references to Sandrokottas with Chandragupta Maurya established the fixed chronological baseline for ancient Indian history."
+      },
+      {
+        "text": "In the chronological sequence of Indian eras, the Saka Samvat (58 B.C.) precedes the Vikrama Samvat (A.D. 78) and the Gupta Era (A.D. 319–20).",
+        "is_true": false,
+        "why": "Vikrama Samvat began in 58 B.C., whereas Saka Samvat began in A.D. 78, followed by the Gupta Era in A.D. 319–20."
+      }
+    ],
+    "explanation": "The Periplus and Ptolemy's Geography were written in Greek, while Pliny's Naturalis Historia was in Latin. Vikrama Samvat (58 B.C.) precedes Saka Samvat (A.D. 78)."
+  },
+  {
+    "question_id": "NEW-HIS-003",
+    "question_type": "statements",
+    "exam": "UPSC",
+    "paper": "1",
+    "year": 2026,
+    "theme": "Ancient History",
+    "subtopic": "Chalcolithic Cultures",
+    "question": "Consider the following statements regarding the regional variations and material culture of Chalcolithic settlements in India:",
+    "options": [],
+    "statements": [
+      {
+        "text": "Unlike most Chalcolithic cultures characterized by a stone-blade industry alongside copper, the Banas Valley site of Ahar shows a complete absence of stone axes or blades due to locally abundant copper.",
+        "is_true": true,
+        "why": "Ahar is the classic exception where stone tools are completely absent and copper objects are numerous (whereas nearby Gilund had a stone-blade industry)."
+      },
+      {
+        "text": "Chalcolithic communities across western Maharashtra, such as at Jorwe and Inamgaon, made widespread use of kiln-burnt bricks for multi-storeyed domestic architecture.",
+        "is_true": false,
+        "why": "Chalcolithic people were generally unacquainted with burnt bricks and lived in wattle-and-daub or mud houses."
+      },
+      {
+        "text": "While the Jorwe culture in western Maharashtra buried the dead in urns beneath house floors in a North-to-South orientation, Chalcolithic communities in South India practiced East-to-West extended burials.",
+        "is_true": true,
+        "why": "Western Maharashtra used North-South urn burials under floors (unlike Harappan external cemeteries), South India used East-West burials, and West Bengal used fractional burials."
+      },
+      {
+        "text": "Excavations at Navdatoli on the Narmada have yielded the largest variety of foodgrains recovered from any protohistoric site in India, including wheat, rice, and lentils.",
+        "is_true": true,
+        "why": "Navdatoli (Malwa culture) is renowned for producing the richest variety of cereals and pulses in protohistoric India."
+      }
+    ],
+    "explanation": "Ahar lacked stone blades, Navdatoli yielded the widest variety of foodgrains, and Maharashtrian Chalcolithic sites featured mud houses (lacking burnt bricks) with North-South urn burials beneath house floors."
+  },
+  {
+    "question_id": "NEW-HIS-004",
+    "question_type": "statements",
+    "exam": "UPSC",
+    "paper": "1",
+    "year": 2026,
+    "theme": "Ancient History",
+    "subtopic": "Harappan Civilization",
+    "question": "Consider the following statements regarding the political organization, trade, and religious practices of the Harappan Civilization:",
+    "options": [],
+    "statements": [
+      {
+        "text": "In contrast to contemporary Egypt and Mesopotamia, archaeological excavations have revealed no monumental temples at any Harappan site, suggesting that political authority likely rested with merchants rather than temple priests.",
+        "is_true": true,
+        "why": "R. S. Sharma highlights the complete absence of temples at Harappan sites and infers that Harappan rulers were more concerned with commerce than conquest or priestly theocracy."
+      },
+      {
+        "text": "Harappan long-distance and internal trade was facilitated by standardized silver punch-marked coins bearing animal and geometric motifs.",
+        "is_true": false,
+        "why": "The Harappans had no metallic money or coinage; all exchanges were conducted through barter, while seals were used for authentication/ownership."
+      },
+      {
+        "text": "The Pasupati seal from Mohenjo-daro depicts a three-horned yogic figure surrounded by an elephant, a tiger, a rhinoceros, a buffalo, and two deer at his feet.",
+        "is_true": true,
+        "why": "The seal depicts these exact four wild animals around the deity with two deer below, notably omitting the cow, lion, and horse."
+      },
+      {
+        "text": "The archaeological site of Bhagwanpura in Kurukshetra demonstrates a direct cultural overlap between the Late Harappan phase and a pre-iron Painted Grey Ware (PGW) pastoral culture.",
+        "is_true": true,
+        "why": "Bhagwanpura (1600–1000 B.C.) shows Late Harappan pottery overlapping with PGW and a 13-roomed mud house, but no iron objects or burnt bricks."
+      }
+    ],
+    "explanation": "Harappan society lacked temples and metallic coins (relying on barter). The Pasupati seal shows an elephant, tiger, rhino, buffalo, and two deer, while Bhagwanpura bridges Late Harappan and pre-iron PGW phases."
+  },
+  {
+    "question_id": "NEW-HIS-005",
+    "question_type": "statements",
+    "exam": "HCS",
+    "paper": "1",
+    "year": 2026,
+    "theme": "Ancient History",
+    "subtopic": "Rig Vedic & Later Vedic Transitions",
+    "question": "Consider the following statements comparing the socio-political structures of the Rig Vedic and Later Vedic periods:",
+    "options": [],
+    "statements": [
+      {
+        "text": "In the Rig Veda, the tribal term 'jana' appears 275 times and 'vis' appears 170 times, whereas the territorial term 'janapada' does not occur even once.",
+        "is_true": true,
+        "why": "Rig Vedic society was pastoral and kin-based rather than territorial; hence 'janapada' is completely absent."
+      },
+      {
+        "text": "Rig Vedic prayers primarily sought spiritual liberation (moksha) from rebirth, and priests were routinely rewarded with tax-free agricultural land grants as dakshina.",
+        "is_true": false,
+        "why": "Rig Vedic prayers sought material welfare (praja and pasu), not moksha, and dakshina consisted of cows and women slaves, never land."
+      },
+      {
+        "text": "During the Later Vedic period, the popular assembly called 'vidatha' completely disappeared, women were excluded from the 'sabha', and the 'rathakara' (chariot-maker) remained entitled to the upanayana ceremony.",
+        "is_true": true,
+        "why": "Later Vedic polity saw the decline of tribal assemblies and women's public roles, though certain artisans like the rathakara still enjoyed high ritual status."
+      },
+      {
+        "text": "All four stages of life (asramas)—including sannyasa (complete ascetic renunciation)—were fully institutionalized and mandated in the Later Vedic texts.",
+        "is_true": false,
+        "why": "Later Vedic texts mention only three asramas (brahmachari, grihastha, vanaprastha); the fourth stage (sannyasa) was not well-established until post-Vedic times."
+      }
+    ],
+    "explanation": "Rig Vedic society was pastoral and non-territorial (zero mentions of janapada, no land grants, prayers for material welfare). In Later Vedic times, the vidatha vanished and only three asramas were established."
+  },
+  {
+    "question_id": "NEW-HIS-006",
+    "question_type": "statements",
+    "exam": "UPSC",
+    "paper": "1",
+    "year": 2026,
+    "theme": "Ancient History",
+    "subtopic": "Later Vedic Archaeology & Epic Stratification",
+    "question": "Consider the following statements regarding the archaeological reality of Later Vedic sites and the textual stratification of the Mahabharata:",
+    "options": [],
+    "statements": [
+      {
+        "text": "Archaeological excavations at the Painted Grey Ware (PGW) site of Hastinapur (c. 900–500 B.C.) have revealed only mud settlements and faint beginnings of town life, showing that Later Vedic people hardly knew the use of burnt bricks.",
+        "is_true": true,
+        "why": "Contrary to poetic descriptions in the Mahabharata, excavated PGW levels at Hastinapur show modest mud structures without burnt-brick palaces."
+      },
+      {
+        "text": "When the Kuru capital at Hastinapur was destroyed by floods, the remnants of the Kuru clan migrated eastward to Pataliputra and erected stone fortifications.",
+        "is_true": false,
+        "why": "Following the flood at Hastinapur, the Kuru clan moved to Kausambi (near Allahabad), not Pataliputra, and lived in mud settlements."
+      },
+      {
+        "text": "The Mahabharata expanded in stages from 8,800 verses (Jaya Samhita) to 24,000 verses (Bharata) and finally to 100,000 verses (Satasahasri Samhita) by c. A.D. 400, with its didactic portions largely belonging to post-Maurya and Gupta times.",
+        "is_true": true,
+        "why": "While the core narrative reflects Later Vedic Kuru-Panchala conflict, the descriptive portions are post-Vedic and the didactic sections are post-Maurya/Gupta."
+      },
+      {
+        "text": "Although Kosala and Videha were Aryanized around 600 B.C., the story of Rama is completely absent from Vedic literature.",
+        "is_true": true,
+        "why": "R. S. Sharma notes that despite the eastward spread to Kosala and Videha in Later Vedic times, Rama is not mentioned in Vedic literature."
+      }
+    ],
+    "explanation": "Hastinapur (900–500 B.C.) was a modest mud settlement whose flooded inhabitants migrated to Kausambi. The Mahabharata reached its final compilation around A.D. 400, and Rama is absent from Vedic texts."
+  },
+  {
+    "question_id": "NEW-HIS-007",
+    "question_type": "statements",
+    "exam": "UPSC",
+    "paper": "1",
+    "year": 2026,
+    "theme": "Ancient History",
+    "subtopic": "Second Urbanization & NBPW Phase",
+    "question": "Consider the following statements regarding the material culture and administrative machinery during the Age of the Buddha and the Northern Black Polished Ware (NBPW) phase:",
+    "options": [],
+    "statements": [
+      {
+        "text": "While the glossy Northern Black Polished Ware (NBPW) and metallic punch-marked coins emerged in the 6th century B.C., the widespread use of burnt bricks and terracotta ringwells appeared only in the middle of the NBPW phase during the 3rd century B.C.",
+        "is_true": true,
+        "why": "A crucial chronological distinction in R. S. Sharma is that NBPW and coins start in the 6th century B.C., but burnt bricks and ringwells become widespread only in the Mauryan era (3rd century B.C.)."
+      },
+      {
+        "text": "In the 6th–5th centuries B.C., royal officers called Balisadhakas were appointed to collect customs and tolls on merchandise from urban traders.",
+        "is_true": false,
+        "why": "Balisadhakas collected the compulsory peasant tax (bali), whereas customs and tolls were collected by the Saulkika or Sulkadhyaksha."
+      },
+      {
+        "text": "In the large monarchies of the Gangetic basin, the old Vedic tribal assemblies (sabha and samiti) were replaced by a small advisory body called the parishad, consisting exclusively of brahmanas.",
+        "is_true": true,
+        "why": "The decay of kin-based tribal assemblies in large territorial states led to the rise of the small, brahmana-only parishad."
+      },
+      {
+        "text": "When pre-Mauryan monarchs granted the revenue of villages to influential brahmanas and setthis, the beneficiaries were also invested with full administrative and judicial authority over those villages.",
+        "is_true": false,
+        "why": "In the Age of the Buddha, beneficiaries received only the royal revenue from villages and were never granted administrative authority (which began much later under the Satavahanas)."
+      }
+    ],
+    "explanation": "Burnt bricks and ringwells appeared in the middle of the NBPW phase (3rd c. B.C.). Balisadhakas collected peasant bali (not tolls), the parishad replaced tribal assemblies, and early village grants transferred revenue without administrative powers."
+  },
+  {
+    "question_id": "NEW-HIS-008",
+    "question_type": "statements",
+    "exam": "HCS",
+    "paper": "1",
+    "year": 2026,
+    "theme": "Ancient History",
+    "subtopic": "Buddhism and Jainism",
+    "question": "Consider the following statements comparing the philosophical and social doctrines of early Buddhism and Jainism:",
+    "options": [],
+    "statements": [
+      {
+        "text": "While early Buddhism rejected the existence of the soul (atman) and fiercely condemned the varna system, Jainism believed in souls (jiva) and did not directly condemn the varna system.",
+        "is_true": true,
+        "why": "Mahavira attributed one's birth in a high or low varna to the sins or virtues of the previous birth rather than rejecting the varna order outright, and Jainism affirmed souls even in inanimate matter."
+      },
+      {
+        "text": "Jainism recognized the existence of gods but placed them lower than the Jina (the conqueror).",
+        "is_true": true,
+        "why": "Jainism did not deny the existence of deities altogether but subordinated them beneath the liberated Jina."
+      },
+      {
+        "text": "The earliest Buddhist text, the Suttanipata, condemned cattle-rearing and plough agriculture as sinful attachments to worldly property.",
+        "is_true": false,
+        "why": "On the contrary, the Suttanipata declared cattle to be givers of food, beauty, and happiness (annada, vannada, sukhada) and pleaded for their protection to support the agrarian economy."
+      },
+      {
+        "text": "The Therigatha, forming part of the Pali Sutta Pitaka, consists of verses composed by bhikkhunis (women who had attained liberation).",
+        "is_true": true,
+        "why": "The Therigatha is a celebrated canonical Buddhist anthology of poems by elder nuns recounting their spiritual liberation."
+      }
+    ],
+    "explanation": "Buddhism rejected the soul and varna system and pleaded for cattle protection in the Suttanipata to boost iron-plough agriculture. Jainism recognized gods below the Jina and affirmed the soul."
+  },
+  {
+    "question_id": "NEW-HIS-009",
+    "question_type": "statements",
+    "exam": "UPSC",
+    "paper": "1",
+    "year": 2026,
+    "theme": "Ancient History",
+    "subtopic": "Iranian & Macedonian Invasions",
+    "question": "Consider the following statements regarding the Achaemenian (Iranian) and Macedonian invasions of north-western India:",
+    "options": [],
+    "statements": [
+      {
+        "text": "The Iranian ruler Darius annexed Panjab (west of the Indus) and Sindh in 516 B.C., making this Indian territory the 20th satrapy of his empire, which paid an annual tribute of 360 talents of gold.",
+        "is_true": true,
+        "why": "Herodotus records that the Indian satrapy (the 20th) was the most populous and wealthy part of the Achaemenian Empire, paying 360 talents of gold dust."
+      },
+      {
+        "text": "Two centuries of Indo-Iranian contact introduced the Kharosthi script (written from right to left) into north-western India and was directly responsible for the origin and continuation of punch-marked coins in India.",
+        "is_true": false,
+        "why": "While Iranian scribes brought the Kharosthi script (and influenced Ashokan bell-shaped capitals), R. S. Sharma explicitly notes that it is wrong to think punch-marked coins continued in India as a result of Iranian contact."
+      },
+      {
+        "text": "Alexander's historians documented social practices in north-western India such as the sati system and the sale of girls in marketplaces by poor parents, while noting carpentry as the most flourishing craft.",
+        "is_true": true,
+        "why": "Greek accounts accompanying Alexander recorded these exact social observations and praised Indian carpenters for building chariots, boats, and ships."
+      },
+      {
+        "text": "By destroying the power of petty independent principalities and tribal republics in north-west India, Alexander's campaign inadvertently paved the way for the expansion of the Mauryan Empire in that region.",
+        "is_true": true,
+        "why": "The weakening of autonomous north-western states enabled Chandragupta Maurya to easily absorb the region into his empire."
+      }
+    ],
+    "explanation": "Darius annexed the north-west as the 20th satrapy in 516 B.C. and Iranian contact brought the Kharosthi script, but punch-marked coins were NOT an Iranian borrowing. Alexander's historians noted sati, the sale of girls by poor parents, and flourishing carpentry."
+  },
+  {
+    "question_id": "NEW-HIS-010",
+    "question_type": "statements",
+    "exam": "UPSC",
+    "paper": "1",
+    "year": 2026,
+    "theme": "Ancient History",
+    "subtopic": "Mauryan Empire & Ashoka's Dhamma",
+    "question": "Consider the following statements regarding the Mauryan fiscal-administrative apparatus and Ashoka's policies:",
+    "options": [],
+    "statements": [
+      {
+        "text": "In the Rummindei (Lumbini) Pillar Inscription, Ashoka completely exempted the village of Lumbini from both the religious tribute (bali) and the royal share of land produce (bhaga).",
+        "is_true": false,
+        "why": "Because Buddha was born at Lumbini, Ashoka exempted the village from bali (tribute) completely, but only reduced bhaga (land revenue) to one-eighth (atthabhagiye)—he did not abolish bhaga."
+      },
+      {
+        "text": "In his public edicts, Ashoka's Dhamma never promised the Buddhist monastic goal of Nirvana, but instead held out the attainment of Heaven (Svarga) as the reward for righteous social conduct.",
+        "is_true": true,
+        "why": "Ashoka's Dhamma was a broad civic and social code aimed at preserving the social order rather than sectarian metaphysics; hence his edicts promised Svarga, never Nirvana."
+      },
+      {
+        "text": "Under the Mauryas, the Samaharta was the chief custodian of the state treasury and storehouse, whereas the Sannidhata was the highest officer in charge of tax assessment.",
+        "is_true": false,
+        "why": "The roles are reversed: the Samaharta was the highest officer in charge of assessment of taxes, while the Sannidhata was the chief custodian of the state treasury and storehouse."
+      },
+      {
+        "text": "Despite Megasthenes's assertion that there were no slaves in India, slaves were employed on a large scale in agricultural operations on state-maintained farms (sita lands) for the first time during the Mauryan period.",
+        "is_true": true,
+        "why": "While domestic slaves existed from Vedic times, the Mauryan state uniquely deployed slaves (including war captives from Kalinga) and hired labourers on a massive scale for state agricultural production."
+      }
+    ],
+    "explanation": "At Lumbini, Ashoka abolished bali but reduced bhaga to 1/8th, and his edicts promised Svarga rather than Nirvana. The Samaharta assessed taxes, the Sannidhata guarded the treasury, and the Mauryas deployed slaves extensively in state agriculture."
+  },
+  {
+    "question_id": "NEW-HIS-011",
+    "question_type": "statements",
+    "exam": "HCS",
+    "paper": "1",
+    "year": 2026,
+    "theme": "Ancient History",
+    "subtopic": "Central Asian Contacts & Post-Mauryan Culture",
+    "question": "Consider the following statements regarding the cultural, artistic, and numismatic developments of the post-Mauryan period (200 B.C.–A.D. 250):",
+    "options": [],
+    "statements": [
+      {
+        "text": "While Indians borrowed heavily from the Greeks in astrology and horoscopy (adopting the term horasastra), they owed nothing striking to the Greeks in medicine, botany, or chemistry.",
+        "is_true": true,
+        "why": "Indian medicine (Charaka and Susruta), botany, and chemistry developed indigenously; Greek debt was strongly felt in astrology, coin minting, and theatre curtains (yavanika)."
+      },
+      {
+        "text": "Although the Imperial Guptas issued the largest number of gold coins in ancient India, the gold coins minted by the early Kushan rulers possessed a higher degree of gold purity.",
+        "is_true": true,
+        "why": "Kushans were the first in India to issue gold coins on a wide scale with higher purity, whereas Gupta gold coins were more numerous but suffered progressive debasement."
+      },
+      {
+        "text": "Burnt-clay coin moulds were completely absent during the Kushan period and came into widespread use only during the post-Gupta period (6th–8th centuries A.D.).",
+        "is_true": false,
+        "why": "Thousands of burnt-clay coin moulds have been recovered from the Kushan period, whereas they virtually disappeared in the post-Gupta period due to the decline of money economy."
+      },
+      {
+        "text": "Unlike the Graeco-Roman Gandhara school, the indigenous Mathura school of art used spotted red sandstone and sculpted images of the Buddha, Vardhamana Mahavira, and the headless erect statue of Kanishka.",
+        "is_true": true,
+        "why": "Mathura art was primarily indigenous, used red sandstone, and produced stone images across Buddhist, Jain (Mahavira), and royal Kushan traditions."
+      }
+    ],
+    "explanation": "Indians owed nothing to the Greeks in medicine/botany/chemistry. Kushan gold coins had higher purity than Gupta coins, burnt-clay coin moulds peaked under the Kushans, and Mathura art produced images of Buddha, Mahavira, and Kanishka in red sandstone."
+  },
+  {
+    "question_id": "NEW-HIS-012",
+    "question_type": "statements",
+    "exam": "UPSC",
+    "paper": "1",
+    "year": 2026,
+    "theme": "Ancient History",
+    "subtopic": "Age of the Satavahanas",
+    "question": "Consider the following statements regarding the polity, economy, and inscriptions of the Satavahanas in the Deccan:",
+    "options": [],
+    "statements": [
+      {
+        "text": "Although Satavahana kings bore matrilineal metronymics such as Gautamiputra and Vashishthiputra, succession to the royal throne remained strictly patriarchal.",
+        "is_true": true,
+        "why": "While mothers enjoyed high visibility and queens issued inscriptions, the Satavahana ruling house was patriarchal because succession passed to the male heir."
+      },
+      {
+        "text": "The Satavahanas were the first rulers in India to make tax-free land grants to brahmanas and Buddhist monks accompanied by administrative and fiscal immunities (abandoning royal police and military entry).",
+        "is_true": true,
+        "why": "Satavahana inscriptions from the 1st century A.D. mark the earliest epigraphic evidence of surrendering administrative control over donated villages."
+      },
+      {
+        "text": "The earliest Satavahana inscriptions of the 1st century B.C. are concentrated in coastal Andhra Pradesh, from where the dynasty later expanded westward into Maharashtra.",
+        "is_true": false,
+        "why": "The earliest Satavahana inscriptions (1st century B.C.) are found in Maharashtra (around Nasik and Nanaghat), and they expanded into Andhra only later under the successors of Gautamiputra Satakarni."
+      },
+      {
+        "text": "The Satavahanas issued the largest volume of high-purity gold coins in peninsular India to facilitate Roman maritime trade.",
+        "is_true": false,
+        "why": "The Satavahanas did NOT issue gold coins at all (using gold only as bullion); they minted coins mostly in lead, potin, copper, and bronze, along with some silver."
+      }
+    ],
+    "explanation": "Satavahana succession was patriarchal despite metronymics, and they pioneered tax-free land grants with administrative immunities. However, their earliest inscriptions are in Maharashtra (not Andhra), and they minted lead/potin coins rather than gold."
+  },
+  {
+    "question_id": "NEW-HIS-013",
+    "question_type": "statements",
+    "exam": "UPSC",
+    "paper": "1",
+    "year": 2026,
+    "theme": "Ancient History",
+    "subtopic": "Spread of Civilization in Eastern India",
+    "question": "Consider the following statements regarding administrative and cultural developments in Orissa and Bengal between the 4th and 7th centuries A.D.:",
+    "options": [],
+    "statements": [
+      {
+        "text": "The Matharas (Pitribhaktas) of Orissa introduced the practice of dividing the year into 12 lunar months in the mid-5th century A.D., replacing the older three-season system.",
+        "is_true": true,
+        "why": "The switch from three seasons to 12 lunar months under the Matharas implied a more precise understanding of weather cycles for expanding agrarian operations."
+      },
+      {
+        "text": "As a unique regional exception to pan-Indian practice, the Matharas of Orissa assessed and collected tax from some agraharas (brahmana village endowments).",
+        "is_true": true,
+        "why": "While agraharas were strictly tax-free elsewhere in India, the Matharas uniquely taxed certain agraharas in Orissa."
+      },
+      {
+        "text": "Dandabhukti was a fiscal and administrative unit formed in the border areas between Bengal and Orissa specifically for taming and punishing tribal inhabitants.",
+        "is_true": true,
+        "why": "Dandabhukti literally denoted a fiscal unit created to pacify and integrate the forest/tribal populations on the Bengal-Orissa frontier."
+      },
+      {
+        "text": "In North Bengal (Pundravardhanabhukti), private individuals were strictly prohibited from purchasing uncultivated state land to create religious endowments.",
+        "is_true": false,
+        "why": "Copper-plate land-sale documents from Pundravardhanabhukti (starting A.D. 432–33) show local princes and individuals purchasing uncultivated land with gold dinaras to donate as tax-free brahmanical endowments, supervised by an agraharika."
+      }
+    ],
+    "explanation": "The Matharas of Orissa introduced the 12-lunar-month calendar and uniquely taxed some agraharas. Dandabhukti was a frontier unit on the Bengal-Orissa border, and Pundravardhanabhukti copper plates record land purchases in gold dinaras from A.D. 432–33."
+  },
+  {
+    "question_id": "NEW-HIS-014",
+    "question_type": "statements",
+    "exam": "HCS",
+    "paper": "1",
+    "year": 2026,
+    "theme": "Ancient History",
+    "subtopic": "Harshavardhana & 7th-Century North India",
+    "question": "Consider the following statements regarding the administration, society, and religious institutions during the reign of Harshavardhana (A.D. 606–647):",
+    "options": [],
+    "statements": [
+      {
+        "text": "Harshavardhana shifted his seat of power from Thanesar to Kanauj, and his southward military expansion was decisively halted on the Narmada River by the Chalukya ruler Pulakesin II.",
+        "is_true": true,
+        "why": "Kanauj became Harsha's central capital in the Doab, while Pulakesin II of Badami defeated him on the Narmada."
+      },
+      {
+        "text": "State revenues under Harsha were divided into four parts, and high state officials were remunerated primarily through feudal land-grant charters rather than cash salaries, explaining the scarcity of Harsha's coins.",
+        "is_true": true,
+        "why": "Revenues were split four ways (King, Scholars, Officials, Religious sects), and paying officials via land grants reduced the need to mint coins."
+      },
+      {
+        "text": "According to the Chinese pilgrim Hsuan Tsang, law and order under Harsha was far superior to that of the Gupta Empire, with highway robbery being completely unheard of.",
+        "is_true": false,
+        "why": "Unlike Fa-hsien (who faced no robbers under the Guptas), Hsuan Tsang noted that law and order was not well maintained under Harsha and he himself was robbed twice by highway bandits."
+      },
+      {
+        "text": "Hsuan Tsang explicitly described the Sudras as agriculturists, marking a major socio-economic elevation from their earlier status as domestic servants and agricultural labourers.",
+        "is_true": true,
+        "why": "By the 7th century A.D., through land grants in backward areas, Sudras had largely transitioned into settled peasant-agriculturists."
+      }
+    ],
+    "explanation": "Harsha moved his capital from Thanesar to Kanauj, was stopped on the Narmada by Pulakesin II, and paid officials via land grants. Hsuan Tsang described Sudras as agriculturists but noted that law and order was weaker than in Gupta times."
+  },
+  {
+    "question_id": "NEW-HIS-015",
+    "question_type": "statements",
+    "exam": "UPSC",
+    "paper": "1",
+    "year": 2026,
+    "theme": "Ancient History",
+    "subtopic": "Gupta Culture, Science & Peninsular Polity",
+    "question": "Consider the following statements regarding classical Sanskrit literature, ancient Indian philosophical-scientific traditions, and early medieval South Indian institutions:",
+    "options": [],
+    "statements": [
+      {
+        "text": "In Gupta-era Sanskrit dramas, all plays are comedies (tragedies being absent), and there is a strict social division of language where higher classes speak Sanskrit while women and Sudras speak Prakrit.",
+        "is_true": true,
+        "why": "Gupta plays by Kalidasa and Bhasa never end in tragedy and reflect social stratification through linguistic differentiation between elite male characters and women/lower varnas."
+      },
+      {
+        "text": "Kapila's original Sankhya system propounded a strictly materialist and non-theistic philosophy, holding that the world owes its creation and evolution to Nature (Prakriti) rather than a divine agency.",
+        "is_true": true,
+        "why": "Early Sankhya did not recognize the existence of God, arguing that Prakriti (nature) rather than divinity created the universe."
+      },
+      {
+        "text": "At the Chalukyan site of Pattadakal, the Papanatha Temple (c. A.D. 680) was built in the Northern (Nagara) style, whereas the Virupaksha Temple (c. A.D. 740) was built in the Southern (Dravida) style.",
+        "is_true": true,
+        "why": "Pattadakal exemplifies architectural synthesis where Papanatha follows the Northern curvilinear tower style and Virupaksha follows the Southern storeyed shikara style."
+      },
+      {
+        "text": "In early medieval South Indian rural administration, the 'Sabha' was the assembly of common non-brahmana peasant villages, whereas the 'Ur' was the exclusive assembly of tax-free brahmadeya villages.",
+        "is_true": false,
+        "why": "The terms are swapped: 'Ur' was the common peasant-caste village assembly, 'Sabha' belonged to brahmana (brahmadeya/agrahara) villages, and 'Nagaram' belonged to merchant-dominated settlements."
+      }
+    ],
+    "explanation": "Gupta dramas featured linguistic stratification and no tragedies, Kapila's Sankhya was originally non-theistic (Prakriti-based), Pattadakal combined Papanatha (Northern) and Virupaksha (Southern) styles, while Ur was the peasant assembly and Sabha was the brahmana assembly."
+  },
+  {
+    "question_id": "NEW-HIS-016",
+    "question_type": "match",
+    "exam": "UPSC",
+    "paper": "1",
+    "year": 2026,
+    "theme": "Ancient History",
+    "subtopic": "Historical Geography of Ancient Regions",
+    "question": "Match each ancient Indian historical region with its defining river boundaries:",
+    "options": [],
+    "pairs": [
+      {
+        "term": "Kalinga",
+        "fact": "Coastal belt situated between the Mahanadi on the north and the Godavari on the south"
+      },
+      {
+        "term": "Andhra",
+        "fact": "Eastern peninsular region between the Godavari on the north and the Krishna on the south"
+      },
+      {
+        "term": "Maharashtra",
+        "fact": "Western Deccan plateau situated between the Tapti (or Damanganga) on the north and the Bhima on the south"
+      },
+      {
+        "term": "Tamilakam (Kaveri Delta)",
+        "fact": "Core Chola heartland extending between the South Pennar river in the north and the Vaigai river in the south"
+      }
+    ],
+    "explanation": "R. S. Sharma delineates ancient cultural subunits by river boundaries: Kalinga (Mahanadi to Godavari), Andhra (Godavari to Krishna), Maharashtra (Tapti/Damanganga to Bhima), and the Kaveri delta zone (South Pennar to Vaigai)."
+  },
+  {
+    "question_id": "NEW-HIS-017",
+    "question_type": "match",
+    "exam": "HCS",
+    "paper": "1",
+    "year": 2026,
+    "theme": "Ancient History",
+    "subtopic": "Neolithic & Protohistoric Sites",
+    "question": "Match each protohistoric archaeological site with its distinctive material marker:",
+    "options": [],
+    "pairs": [
+      {
+        "term": "Burzahom (Kashmir)",
+        "fact": "Neolithic pit dwellings, coarse grey pottery, and burial of domestic dogs with their masters"
+      },
+      {
+        "term": "Piklihal (Karnataka)",
+        "fact": "Neolithic ash mounds formed by burning accumulated dung at seasonal cattle-herding camps"
+      },
+      {
+        "term": "Koldihwa / Belan Valley (Allahabad)",
+        "fact": "Earliest evidence of rice cultivation dating back to the sixth millennium B.C."
+      },
+      {
+        "term": "Bhagwanpura (Kurukshetra)",
+        "fact": "13-roomed mud house showing direct overlap between Late Harappan and pre-iron Painted Grey Ware (PGW) phases"
+      }
+    ],
+    "explanation": "Burzahom is marked by pit dwellings and dog burials, Piklihal by Neolithic cattle-camp ash mounds, Koldihwa by early rice cultivation, and Bhagwanpura by Late Harappan-PGW overlap without iron."
+  },
+  {
+    "question_id": "NEW-HIS-018",
+    "question_type": "match",
+    "exam": "UPSC",
+    "paper": "1",
+    "year": 2026,
+    "theme": "Ancient History",
+    "subtopic": "Ancient Administrative & Fiscal Officials",
+    "question": "Match each ancient administrative designation or fiscal unit with its exact historical function:",
+    "options": [],
+    "pairs": [
+      {
+        "term": "Balisadhaka",
+        "fact": "Royal officer in the Age of the Buddha appointed to collect the compulsory peasant tax (bali)"
+      },
+      {
+        "term": "Saulkika / Sulkadhyaksha",
+        "fact": "Fiscal official responsible for collecting customs duties and tolls on the sale of commodities by traders"
+      },
+      {
+        "term": "Samaharta",
+        "fact": "Highest Mauryan revenue officer in charge of the assessment of taxes across the empire"
+      },
+      {
+        "term": "Agraharika",
+        "fact": "Officer appointed in 5th–6th century A.D. Bengal to supervise religious and brahmanical land endowments"
+      }
+    ],
+    "explanation": "Balisadhakas collected peasant bali; Saulkikas collected customs and tolls; the Mauryan Samaharta assessed state taxes (while the Sannidhata guarded the treasury); and the Agraharika looked after land endowments in Bengal."
+  },
+  {
+    "question_id": "NEW-HIS-019",
+    "question_type": "match",
+    "exam": "UPSC",
+    "paper": "1",
+    "year": 2026,
+    "theme": "Ancient History",
+    "subtopic": "Eastern Indian Administrative Units & Dynasties",
+    "question": "Match each historical unit or administrative practice of Eastern India (4th–7th centuries A.D.) with its correct description:",
+    "options": [],
+    "pairs": [
+      {
+        "term": "Dantayavagubhoga",
+        "fact": "Fiscal endowment created by the Matharas of Orissa supplying ivory and rice-gruel in a backward region"
+      },
+      {
+        "term": "Dandabhukti",
+        "fact": "Fiscal and administrative unit on the Bengal-Orissa border created to tame and punish tribal inhabitants"
+      },
+      {
+        "term": "Pundravardhanabhukti",
+        "fact": "North Bengal province yielding copper-plate land-sale deeds purchased with gold dinaras from A.D. 432–33"
+      },
+      {
+        "term": "Matharas (Pitribhaktas)",
+        "fact": "Orissan dynasty that introduced the 12-lunar-month calendar and uniquely taxed some agraharas"
+      }
+    ],
+    "explanation": "In Eastern India (4th–7th c. A.D.), the Matharas created Dantayavagubhoga, introduced the 12-month lunar calendar, and taxed some agraharas; Dandabhukti policed the Bengal-Orissa tribal frontier; and Pundravardhanabhukti recorded copper-plate land sales."
+  },
+  {
+    "question_id": "NEW-HIS-020",
+    "question_type": "match",
+    "exam": "HCS",
+    "paper": "1",
+    "year": 2026,
+    "theme": "Ancient History",
+    "subtopic": "Historical Biographies, Texts & Chronicles",
+    "question": "Match each ancient literary work or foreign treatise with its author and central theme:",
+    "options": [],
+    "pairs": [
+      {
+        "term": "Ramacharita",
+        "fact": "Written by Sandhyakara Nandi (12th c. A.D.) narrating the conflict between Kaivarta peasants and Pala prince Ramapala"
+      },
+      {
+        "term": "Vikramankadevacharita",
+        "fact": "Written by Bilhana recounting the career of the Chalukya king Vikramaditya VI of Kalyan (1076–1127)"
+      },
+      {
+        "term": "Naturalis Historia",
+        "fact": "Written in Latin by Pliny in A.D. 77 complaining of the drain of Roman gold into India for luxury imports"
+      },
+      {
+        "term": "Periplus of the Erythrean Sea",
+        "fact": "Written in Greek by an anonymous author (A.D. 80–115) detailing ports and trade in the Red Sea and Indian Ocean"
+      }
+    ],
+    "explanation": "Sandhyakara Nandi's Ramacharita covers the Kaivarta revolt; Bilhana's Vikramankadevacharita covers Vikramaditya VI; Pliny's Latin Naturalis Historia laments the gold drain; and the anonymous Greek Periplus details Indo-Roman maritime trade."
+  },
+  {
+    "question_id": "NEW-HIS-021",
+    "question_type": "match",
+    "exam": "UPSC",
+    "paper": "1",
+    "year": 2026,
+    "theme": "Ancient History",
+    "subtopic": "Science, Philosophy & Intellectual History",
+    "question": "Match each ancient Indian thinker or institution with their distinctive historical contribution:",
+    "options": [],
+    "pairs": [
+      {
+        "term": "Aryabhata",
+        "fact": "Calculated the position of planets using Babylonian methods and stated that the sun is stationary while the earth rotates on its axis"
+      },
+      {
+        "term": "Susruta",
+        "fact": "Compiled the Susrutasamhita describing cataract and stone-disease operations along with 121 surgical implements"
+      },
+      {
+        "term": "Varahamihira",
+        "fact": "Composed the Brihatsamhita (6th c. A.D.) and prescribed house sizes varying by both varna and grades of ruling chiefs"
+      },
+      {
+        "term": "Dvarapandita (at Nalanda)",
+        "fact": "'Scholar at the gate' who administered a stiff entrance examination to candidates seeking admission to Nalanda University"
+      }
+    ],
+    "explanation": "Aryabhata proposed axial rotation of the earth; Susruta detailed surgery and 121 instruments; Varahamihira codified varna- and rank-based house proportions in the 6th century A.D.; and the dvarapandita screened entrants at Nalanda."
+  },
+  {
+    "question_id": "NEW-HIS-022",
+    "exam": "UPSC",
+    "paper": "1",
+    "year": 2026,
+    "theme": "Ancient History",
+    "subtopic": "Vedic Literature & Social Stratification",
+    "question": "In the context of Later Vedic political and ritual relations, which text describes the brahmana, in relation to the rajanya/prince, as 'a seeker of livelihood and an acceptor of gifts, but removable at will'?",
+    "options": [
+      {
+        "label": "a",
+        "text": "Satapatha Brahmana"
+      },
+      {
+        "label": "b",
+        "text": "Aitareya Brahmana"
+      },
+      {
+        "label": "c",
+        "text": "Brihadaranyaka Upanishad"
+      },
+      {
+        "label": "d",
+        "text": "Atharva Veda"
+      }
+    ],
+    "answer": "b",
+    "explanation": "In the Later Vedic period, when conflicts over social supremacy arose between priests and warriors, the Aitareya Brahmana explicitly described the brahmana in relation to the prince as a seeker of livelihood and an acceptor of gifts, but removable at will."
+  },
+  {
+    "question_id": "NEW-HIS-023",
+    "exam": "HCS",
+    "paper": "1",
+    "year": 2026,
+    "theme": "Ancient History",
+    "subtopic": "Painted Grey Ware & Archaeology",
+    "question": "What makes the archaeological site of Bhagwanpura (1600–1000 B.C.) in Kurukshetra district, Haryana, historically unique among Painted Grey Ware (PGW) settlements?",
+    "options": [
+      {
+        "label": "a",
+        "text": "It yielded the earliest iron ploughshares and burnt-brick granaries in the Indo-Gangetic divide."
+      },
+      {
+        "label": "b",
+        "text": "It represents a pre-iron pastoral PGW phase with a 13-roomed mud house that directly overlaps with Late Harappan pottery, yielding neither iron objects nor cereals."
+      },
+      {
+        "label": "c",
+        "text": "It contains the earliest deciphered Prakrit inscriptions engraved on copper plates prior to the Mauryan period."
+      },
+      {
+        "label": "d",
+        "text": "It served as the fortified stone capital to which the Kuru clan migrated after the flooding of Hastinapur."
+      }
+    ],
+    "answer": "b",
+    "explanation": "Excavations at Bhagwanpura (1600–1000 B.C.) revealed a 13-roomed mud house and an overlap between Late Harappan pottery and PGW, representing a pre-iron pastoral phase where cattle bones were found in large numbers, but no iron objects, burnt bricks, or cereals were recovered."
+  },
+  {
+    "question_id": "NEW-HIS-024",
+    "exam": "UPSC",
+    "paper": "1",
+    "year": 2026,
+    "theme": "Ancient History",
+    "subtopic": "Mauryan Empire",
+    "question": "Why did Ashoka reduce the royal share of land revenue (bhaga) to one-eighth while completely abolishing the religious tribute (bali) in the Rummindei Pillar Inscription?",
+    "options": [
+      {
+        "label": "a",
+        "text": "Because Lumbini had suffered a severe famine following the Kalinga campaign and required emergency fiscal relief."
+      },
+      {
+        "label": "b",
+        "text": "Because Gautama Buddha was born at Lumbini, yet even for that sacred village the Mauryan state retained its sovereign claim to agricultural land tax at a reduced rate."
+      },
+      {
+        "label": "c",
+        "text": "Because the village had been converted into a tax-free brahmadeya endowment governed independently by an agraharika."
+      },
+      {
+        "label": "d",
+        "text": "Because Ashoka had renounced all state revenue collection across the empire to promote the attainment of Nirvana."
+      }
+    ],
+    "answer": "b",
+    "explanation": "Ashoka visited Lumbini to honour the birthplace of the Buddha and exempted the village from bali (tribute). However, the fact that bhaga (land revenue) was reduced to 1/8th rather than abolished altogether proves that the Mauryan state was not an extreme fiscal pacifist and maintained its sovereign right over agrarian taxation."
+  },
+  {
+    "question_id": "NEW-HIS-025",
+    "exam": "UPSC",
+    "paper": "1",
+    "year": 2026,
+    "theme": "Ancient History",
+    "subtopic": "Numismatics & Economic History",
+    "question": "Which historical period of ancient India yielded the largest total number of coins—minted in lead, potin, copper, bronze, silver, and gold—indicating deep monetization of craft and retail trade even at the lower urban levels?",
+    "options": [
+      {
+        "label": "a",
+        "text": "The Mauryan Period (4th–2nd centuries B.C.)"
+      },
+      {
+        "label": "b",
+        "text": "The Post-Mauryan Period (200 B.C.–A.D. 250)"
+      },
+      {
+        "label": "c",
+        "text": "The Imperial Gupta Period (A.D. 319–550)"
+      },
+      {
+        "label": "d",
+        "text": "The Reign of Harshavardhana (A.D. 606–647)"
+      }
+    ],
+    "answer": "b",
+    "explanation": "The post-Mauryan period (200 B.C.–A.D. 250) produced the largest total volume of coins in ancient India across base and precious metals (lead, potin, copper, bronze, silver, and gold), along with thousands of Kushan clay coin moulds, reflecting peak urban craft production and monetization."
+  },
+  {
+    "question_id": "NEW-HIS-026",
+    "exam": "HCS",
+    "paper": "1",
+    "year": 2026,
+    "theme": "Ancient History",
+    "subtopic": "Harshavardhana & Nalanda University",
+    "question": "Which of the following accurately contrasts the accounts of the Chinese Buddhist pilgrims Hsuan Tsang and I-tsing regarding the monastic university of Nalanda in the 7th century A.D.?",
+    "options": [
+      {
+        "label": "a",
+        "text": "Hsuan Tsang described Nalanda as a Hinayana centre housing 3,000 monks, whereas I-tsing described it as a Vajrayana centre housing 10,000 monks."
+      },
+      {
+        "label": "b",
+        "text": "While Hsuan Tsang reported 10,000 monks residing at the Mahayana university of Nalanda, I-tsing (who visited in A.D. 670) recorded the more realistic figure of 3,000 monks supported by the revenues of 200 villages."
+      },
+      {
+        "label": "c",
+        "text": "Hsuan Tsang stated that Nalanda monks subsisted solely on daily street alms, whereas I-tsing noted they were paid cash salaries in gold dinaras."
+      },
+      {
+        "label": "d",
+        "text": "Both pilgrims agreed that Nalanda had no entrance examination and admitted any lay follower without screening."
+      }
+    ],
+    "answer": "b",
+    "explanation": "Nalanda was a premier Mahayana Buddhist residential university where candidates had to pass a rigorous entrance test conducted by the dvarapandita. Hsuan Tsang put the student-monk population at 10,000, whereas I-tsing (visiting in A.D. 670) recorded 3,000 monks supported in kind by 200 endowed villages."
+  },
+  {
+    "question_id": "NEW-HIS-027",
+    "exam": "UPSC",
+    "paper": "1",
+    "year": 2026,
+    "theme": "Ancient History",
+    "subtopic": "Spread of Civilization in Eastern India",
+    "question": "In the context of state formation in Orissa between the 4th and 6th centuries A.D., what was the primary socio-economic significance of the Matharas (Pitribhaktas) replacing the old three-season system with a 12-lunar-month calendar?",
+    "options": [
+      {
+        "label": "a",
+        "text": "It aligned Orissan maritime navigation schedules with Roman merchant fleets arriving from Alexandria."
+      },
+      {
+        "label": "b",
+        "text": "It provided a more precise knowledge of weather conditions essential for systematic agricultural operations in newly settled peasant villages."
+      },
+      {
+        "label": "c",
+        "text": "It was mandated by Ashoka's rock edicts at Dhauli and Jaugada to standardize Buddhist uposatha observances."
+      },
+      {
+        "label": "d",
+        "text": "It abolished all brahmanical land grants and replaced them with monthly cash stipends for tribal chiefs."
+      }
+    ],
+    "answer": "b",
+    "explanation": "In the mid-5th century A.D., the Matharas of Orissa began dividing the year into 12 lunar months instead of three seasons. In R. S. Sharma's analysis, this shift implied a sounder and more detailed idea of weather conditions, which was vital for expanding plough agriculture in hitherto backward tribal areas."
+  },
+  {
+    "question_id": "NEW-HIS-028",
+    "exam": "HCS",
+    "paper": "1",
+    "year": 2026,
+    "theme": "Ancient History",
+    "subtopic": "Chalcolithic Burial Practices",
+    "question": "How did the burial practices of the Chalcolithic communities of western Maharashtra (such as at Jorwe and Inamgaon) fundamentally differ from those of the Mature Harappans?",
+    "options": [
+      {
+        "label": "a",
+        "text": "The people of western Maharashtra practiced cremation exclusively and scattered the ashes in rivers, leaving no skeletal remains."
+      },
+      {
+        "label": "b",
+        "text": "While Harappans buried their dead in separate cemeteries outside the settlement, the Chalcolithic people of western Maharashtra buried their dead in urns directly beneath the floor of their houses in a North-to-South position."
+      },
+      {
+        "label": "c",
+        "text": "The Chalcolithic people of western Maharashtra built monumental stone chambers (megaliths) over royal graves containing iron war-chariots."
+      },
+      {
+        "label": "d",
+        "text": "They buried domestic dogs and sheep alongside human bodies inside subterranean pit dwellings."
+      }
+    ],
+    "answer": "b",
+    "explanation": "Unlike the Harappans, who maintained distinct cemeteries outside their habitation areas, the Jorwe/Inamgaon Chalcolithic people of western Maharashtra buried their dead in urns under the floors of their own houses in a North-to-South orientation, accompanied by pots for use in the afterlife."
+  },
+  {
+    "question_id": "NEW-HIS-029",
+    "exam": "UPSC",
+    "paper": "1",
+    "year": 2026,
+    "theme": "Ancient History",
+    "subtopic": "Rig Vedic Composition & Chronology",
+    "question": "With reference to the internal textual stratification of the Rig Veda (comprising ten mandalas or books), which of the following statements is correct?",
+    "options": [
+      {
+        "label": "a",
+        "text": "Books I and X form the earliest pastoral core, whereas Books II to VII were added during the Mauryan period."
+      },
+      {
+        "label": "b",
+        "text": "Books II to VII constitute the earliest core known as the 'Family Books' (attributed to specific seer lineages), while Books I and X are the latest additions."
+      },
+      {
+        "label": "c",
+        "text": "All ten books were composed simultaneously around 600 B.C. in the middle Gangetic basin."
+      },
+      {
+        "label": "d",
+        "text": "Book X is the oldest book because it contains no reference to the fourfold varna division."
+      }
+    ],
+    "answer": "b",
+    "explanation": "In the Rig Veda (10 mandalas), Books II to VII are the earliest portions, called Family Books because each is ascribed to a particular family of seers (rishis). Books I and X (which includes the Purushasukta hymn mentioning the four varnas) are the latest additions."
+  },
+  {
+    "question_id": "NEW-HIS-030",
+    "exam": "HCS",
+    "paper": "1",
+    "year": 2026,
+    "theme": "Ancient History",
+    "subtopic": "Early Medieval Society & Varna",
+    "question": "What does Varahamihira's 6th-century A.D. prescription regarding the dimensions of residential houses reveal about the evolution of the social structure in early medieval India?",
+    "options": [
+      {
+        "label": "a",
+        "text": "The varna system had been completely abolished in urban centres due to the spread of Mahayana Buddhism."
+      },
+      {
+        "label": "b",
+        "text": "Social status and residential privileges were now determined both by traditional varna hierarchy and by the graded hierarchy of landed possessions and ruling chiefs (samantas)."
+      },
+      {
+        "label": "c",
+        "text": "Only merchant guilds (nagarams) were permitted to construct burnt-brick residences, while kings lived in mud structures."
+      },
+      {
+        "label": "d",
+        "text": "All four varnas were mandated to build houses of identical size to enforce civic equality."
+      }
+    ],
+    "answer": "b",
+    "explanation": "In the 6th century A.D., the astronomer and encyclopedist Varahamihira prescribed house sizes that varied not only according to the four varnas (brahmana, kshatriya, vaisya, sudra) but also according to the grades of ruling chiefs, reflecting the rise of a landed feudal hierarchy that cut across and overlapped with traditional varna ranks."
+  }
+]
