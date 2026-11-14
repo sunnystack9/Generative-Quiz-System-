@@ -4826,6 +4826,29 @@ def inject_tap_card_css():
         [class*="st-key-tapcard"] button div {
             text-align: left !important;
         }
+
+        /* 1) More breathing room BETWEEN the tap cards. */
+        [class*="st-key-tapcard"] {
+            margin-bottom: 0.75rem !important;
+        }
+
+        /* 2) Remove the invisible "gap" left behind by every <style> block.
+           Each st.markdown("<style>...") is an empty element, and Streamlit
+           puts a normal 1rem gap around every element -- so several style
+           blocks in a row were stacking up into one big empty space (below
+           the question and below the "Tap every statement..." line).
+           display:none hides only the empty box; the CSS inside still works.
+           Scoped to the tap-question screen (key "tapq_...") so no other
+           screen's carefully tuned spacing is touched. */
+        [class*="st-key-tapq"] [data-testid="stElementContainer"]:has(style),
+        [class*="st-key-tapq"] [data-testid="element-container"]:has(style) {
+            display: none !important;
+        }
+
+        /* 3) Remove the extra bottom margin of the last line of the question. */
+        [class*="st-key-stem_box_"] [data-testid="stMarkdownContainer"] p:last-child {
+            margin-bottom: 0 !important;
+        }
         </style>
         """,
         unsafe_allow_html=True,
@@ -5352,13 +5375,21 @@ def render_question(practice_questions, user):
         return
 
     q = qs[idx]
+
+    # Tap-statement / match questions get their own keyed container
+    # ("tapq_...") so the spacing fixes in inject_tap_card_css() apply to
+    # this screen only and don't affect any other screen.
+    if is_new_type(q):
+        with st.container(key=f"tapq_{idx}"):
+            st.progress((idx + 1) / len(qs))
+            st.markdown(f"**Question {idx + 1} of {len(qs)}**  ·  _{q['theme']}_  ·  {q['exam']} {q['year']}")
+            render_question_stem(q, container_key=f"stem_box_{q.get('question_id', 'current')}")
+            render_tap_question(q, idx, user, qs)
+        return
+
     st.progress((idx + 1) / len(qs))
     st.markdown(f"**Question {idx + 1} of {len(qs)}**  ·  _{q['theme']}_  ·  {q['exam']} {q['year']}")
     render_question_stem(q, container_key=f"stem_box_{q.get('question_id', 'current')}")
-
-    if is_new_type(q):
-        render_tap_question(q, idx, user, qs)
-        return
 
     # Justify the answer options, revealed-state feedback, and explanation text
     # the same way the question stem is justified above. This targets
