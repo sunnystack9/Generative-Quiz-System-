@@ -5476,6 +5476,27 @@ def render_question(practice_questions, user):
            touches the pre-submit list and leaves the revealed state alone.
            :not(:last-child) skips the trailing gap before the Confidence
            slider below, so that spacing isn't doubled up unnecessarily. */
+        /* Wrap long options inside the page on wide screens (iPad). Flex
+           children refuse to shrink below their text width unless
+           min-width is 0, so the text ran off the page instead of wrapping.
+           Every level from the radio group down is told it may shrink. */
+        div[data-testid="stRadio"],
+        div[data-testid="stRadio"] [role="radiogroup"],
+        label[data-testid="stRadioOption"],
+        label[data-testid="stRadioOption"] > div,
+        label[data-testid="stRadioOption"] > div > div {
+            max-width: 100% !important;
+            min-width: 0 !important;
+        }
+        label[data-testid="stRadioOption"] {
+            width: 100% !important;
+        }
+        label[data-testid="stRadioOption"] p {
+            white-space: normal !important;
+            overflow-wrap: break-word !important;
+            text-align: justify !important;
+            text-justify: inter-word;
+        }
         label[data-testid="stRadioOption"]:not(:last-child) {
             margin-bottom: 0.85rem;
         }
