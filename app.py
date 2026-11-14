@@ -4824,7 +4824,9 @@ def inject_tap_card_css():
         }
         [class*="st-key-tapcard"] button p,
         [class*="st-key-tapcard"] button div {
-            text-align: left !important;
+            text-align: justify !important;
+            width: 100%;
+            overflow-wrap: break-word !important;
         }
 
         /* 1) More breathing room BETWEEN the tap cards. */
@@ -4841,7 +4843,9 @@ def inject_tap_card_css():
            Scoped to the tap-question screen (key "tapq_...") so no other
            screen's carefully tuned spacing is touched. */
         [class*="st-key-tapq"] [data-testid="stElementContainer"]:has(style),
-        [class*="st-key-tapq"] [data-testid="element-container"]:has(style) {
+        [class*="st-key-tapq"] [data-testid="element-container"]:has(style),
+        [class*="st-key-mcqcards"] [data-testid="stElementContainer"]:has(style),
+        [class*="st-key-mcqcards"] [data-testid="element-container"]:has(style) {
             display: none !important;
         }
 
@@ -5524,8 +5528,31 @@ def render_question(practice_questions, user):
                 st.rerun()
             return
 
-        radio_key = f"radio_{q['question_id']}_{idx}"
-        choice = st.radio("Select your answer:", option_labels, key=radio_key, index=None)
+        # Options are shown as tap cards (same look as the statement
+        # questions) instead of st.radio -- the radio list refused to wrap
+        # on wide screens like an iPad and stretched the whole page.
+        # Single-select: tapping a card selects it, tapping another moves
+        # the selection. `choice` keeps the same "a) text" format the
+        # submit code below already expects.
+        sel_key = f"mcq_sel_{q['question_id']}_{idx}"
+        if sel_key not in st.session_state:
+            st.session_state[sel_key] = None
+        with st.container(key=f"mcqcards_{idx}"):
+            inject_tap_card_css()
+            inject_button_tint_css("tapcard_on_", "#eff6ff", "#3b82f6", "#1d4ed8", hover_bg="#dbeafe")
+            inject_button_tint_css("tapcard_off_", "#ffffff", "#d1d5db", "#111827", hover_bg="#f9fafb")
+            st.caption("Tap the option you think is correct.")
+            for i, opt_label in enumerate(option_labels):
+                is_on = st.session_state[sel_key] == opt_label
+                with st.container(key=f"tapcard_{'on' if is_on else 'off'}_mcq{idx}_{i}"):
+                    if st.button(
+                        f"{'🔘' if is_on else '⚪'}  {opt_label}",
+                        key=f"mcqbtn_{q['question_id']}_{idx}_{i}",
+                        use_container_width=True,
+                    ):
+                        st.session_state[sel_key] = opt_label
+                        st.rerun()
+        choice = st.session_state[sel_key]
 
         confidence = st.select_slider(
             "Confidence",
